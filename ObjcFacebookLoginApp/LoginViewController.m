@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "LogoutViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "NCMB/NCMB.h"
@@ -41,7 +40,7 @@
         [self performSegueWithIdentifier:@"login" sender:self];
     } else {
         FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
-        [loginManager logInWithReadPermissions:@[@"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        [loginManager logInWithReadPermissions:@[@"public_profile", @"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
            //TODO: process error or result
            if(error){
                // その他のエラーが発生した場合
