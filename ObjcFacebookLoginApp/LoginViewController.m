@@ -40,7 +40,7 @@
         [self performSegueWithIdentifier:@"login" sender:self];
     } else {
         FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
-        [loginManager logInWithReadPermissions:@[@"public_profile", @"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        [loginManager logInWithPermissions:@[@"public_profile", @"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult * _Nullable result, NSError * _Nullable error) {
            //TODO: process error or result
            if(error){
                // その他のエラーが発生した場合
@@ -52,10 +52,10 @@
                    NSDictionary *facebookInfo = @{@"id":result.token.userID,
                                                   @"access_token":result.token.tokenString,
                                                   @"expiration_date":result.token.expirationDate};
-                   
+
                    //会員のインスタンスを作成
                    NCMBUser *user = [NCMBUser user];
-                   
+
                    //Facebookの認証情報を利用して会員登録を行う
                    [user signUpWithFacebookToken:facebookInfo withBlock:^(NSError *error) {
                        if (error){
@@ -77,11 +77,11 @@
                        NSLog(@"エラーが発生しました:%ld", error.code);
                        self.label.text = [NSString stringWithFormat:@"エラーが発生しました:%ld", error.code];
                    }
-                   
+
                }
-               
+
            }
-    
+
        }];
     }
     

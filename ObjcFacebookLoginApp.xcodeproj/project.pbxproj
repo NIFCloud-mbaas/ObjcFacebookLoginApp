@@ -15,6 +15,7 @@
 		BDC3F5A31D06A8FD00CE83EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDC3F5A21D06A8FD00CE83EF /* Assets.xcassets */; };
 		BDC3F5A61D06A8FD00CE83EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDC3F5A41D06A8FD00CE83EF /* LaunchScreen.storyboard */; };
 		BDC3F5AE1D06B07900CE83EF /* LogoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC3F5AD1D06B07900CE83EF /* LogoutViewController.m */; };
+		BF46A8E1249C5D63006D2128 /* EmptyFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46A8E0249C5D63006D2128 /* EmptyFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		BDC3F5A71D06A8FD00CE83EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDC3F5AD1D06B07900CE83EF /* LogoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutViewController.m; sourceTree = "<group>"; };
 		BDC3F5AF1D06B09300CE83EF /* LogoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoutViewController.h; sourceTree = "<group>"; };
+		BF46A8DD249C5C09006D2128 /* ObjcFacebookLoginApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjcFacebookLoginApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		BF46A8E0249C5D63006D2128 /* EmptyFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFile.swift; sourceTree = "<group>"; };
 		E30F9C76ECD4BC7611076626 /* Pods-ObjcFacebookLoginApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcFacebookLoginApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjcFacebookLoginApp/Pods-ObjcFacebookLoginApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,10 +70,12 @@
 		BDC3F58A1D06A8FD00CE83EF = {
 			isa = PBXGroup;
 			children = (
+				BF46A8E0249C5D63006D2128 /* EmptyFile.swift */,
 				BDC3F5951D06A8FD00CE83EF /* ObjcFacebookLoginApp */,
 				BDC3F5941D06A8FD00CE83EF /* Products */,
 				2165B2500CC27111B10668C8 /* Pods */,
 				237A404FB045EDF7027AC5C8 /* Frameworks */,
+				BF46A8DD249C5C09006D2128 /* ObjcFacebookLoginApp-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,12 +120,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDC3F5AA1D06A8FD00CE83EF /* Build configuration list for PBXNativeTarget "ObjcFacebookLoginApp" */;
 			buildPhases = (
+				C19BE95F434E06FE0E0433C8 /* [CP] Check Pods Manifest.lock */,
 				6B28BD02EE07FD68246D3D39 /* 📦 Check Pods Manifest.lock */,
 				BDC3F58F1D06A8FD00CE83EF /* Sources */,
 				BDC3F5901D06A8FD00CE83EF /* Frameworks */,
 				BDC3F5911D06A8FD00CE83EF /* Resources */,
-				CB2C8C95C5C00296645D866B /* 📦 Embed Pods Frameworks */,
 				E328FF1DB758904E966D1EBC /* 📦 Copy Pods Resources */,
+				D41C7A62E12E830729710A2E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +149,7 @@
 					BDC3F5921D06A8FD00CE83EF = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = KKEABKJHRA;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -151,6 +158,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -193,19 +201,44 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		CB2C8C95C5C00296645D866B /* 📦 Embed Pods Frameworks */ = {
+		C19BE95F434E06FE0E0433C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ObjcFacebookLoginApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D41C7A62E12E830729710A2E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ObjcFacebookLoginApp/Pods-ObjcFacebookLoginApp-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObjcFacebookLoginApp/Pods-ObjcFacebookLoginApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ObjcFacebookLoginApp/Pods-ObjcFacebookLoginApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E328FF1DB758904E966D1EBC /* 📦 Copy Pods Resources */ = {
@@ -234,6 +267,7 @@
 				BDC3F59B1D06A8FD00CE83EF /* AppDelegate.m in Sources */,
 				BDC3F5AE1D06B07900CE83EF /* LogoutViewController.m in Sources */,
 				BDC3F5981D06A8FD00CE83EF /* main.m in Sources */,
+				BF46A8E1249C5D63006D2128 /* EmptyFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,11 +380,15 @@
 			baseConfigurationReference = 873B8C7E169E47CD686305AF /* Pods-ObjcFacebookLoginApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ObjcFacebookLoginApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebackend.nifcloud.ObjcFacebookLoginApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjcFacebookLoginApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -359,11 +397,14 @@
 			baseConfigurationReference = E30F9C76ECD4BC7611076626 /* Pods-ObjcFacebookLoginApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ObjcFacebookLoginApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebackend.nifcloud.ObjcFacebookLoginApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjcFacebookLoginApp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
