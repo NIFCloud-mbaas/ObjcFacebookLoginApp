@@ -15,9 +15,9 @@
 ![画像2](/readme-img/002.png)
 
 ## 動作環境
-* Mac OS X 10.10(Yosemite)
-* Xcode ver. 7.2.1
-* iPhone6 ver. 8.2
+* Mac OS X 10.15.4 (Catalina)
+* Xcode ver. 11.4.1
+* iPhone8 ver. 13.4.1
 
 ※上記内容で動作確認をしています。
 ※古いバージョンだと動作しないい可能性があります。
@@ -39,11 +39,16 @@
 
 ![画像5](/readme-img/005.png)
 
-### 2. [GitHub](https://github.com/natsumo/ObjcFileApp.git)からサンプルプロジェクトのダウンロード
+### 2. [GitHub](https://github.com/NIFCLOUD-mbaas/ObjcFacebookLoginApp.git)からサンプルプロジェクトのダウンロード
 
-* この画面([GitHub](https://github.com/natsumo/ObjcFileApp.git))の![画像10](/readme-img/010.png)ボタンをクリックし、さらに![画像11](/readme-img/011.png)ボタンをクリックしてサンプルプロジェクトをMacにダウンロードします
+* この画面([GitHub](https://github.com/NIFCLOUD-mbaas/ObjcFacebookLoginApp.git))の![画像10](/readme-img/010.png)ボタンをクリックし、さらに![画像11](/readme-img/011.png)ボタンをクリックしてサンプルプロジェクトをMacにダウンロードします
 
 ### 3. Xcodeでアプリを起動
+
+* Using below command to install NCMB SDK and Facebook SDK.
+```
+pod install
+```
 
 * ダウンロードしたフォルダを開き、![画像09](/readme-img/009.png)をダブルクリックしてXcode開きます　![画像08](/readme-img/008.png)
 
@@ -56,7 +61,7 @@
 
 ![画像07](/readme-img/007.png)
 
-* それぞれ`YOUR_NCMB_APPLICATION_KEY`と`YOUR_NCMB_CLIENT_KEY`の部分を書き換えます
+* それぞれ`YOUR_APPLICATION_KEY`と`YOUR_CLIENT_KEY`の部分を書き換えます
  * このとき、ダブルクォーテーション（`"`）を消さないように注意してください！
 * 書き換え終わったら`command + s`キーで保存をします
 
